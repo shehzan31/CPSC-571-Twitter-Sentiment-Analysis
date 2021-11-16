@@ -22,7 +22,11 @@ for array in tweetArrays:
 
 for index, tweet in enumerate(tweets):
     tweetData = index, tweet
-    stringedTweetData = str(tweetData)+"\n"
-    parsedFile.writelines(stringedTweetData)
+    stringedTweetData = str(tweetData)
+    emotion = ", emotion is:"
+    emotionRange = ", emotion type is:"
+    fileLine = [stringedTweetData, emotionRange, emotion]
+    parsedFile.writelines(fileLine)
+    parsedFile.writelines("\n")
 
 parsedFile.close()
