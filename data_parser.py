@@ -1,6 +1,7 @@
 import csv
 
 file = open('data_short.csv')
+parsedFile = open("parsed_data_short.txt", "w")
 
 type(file)
 
@@ -18,5 +19,10 @@ tweets = []
 for array in tweetArrays:
     tweets.append(array[2])
 
+
 for index, tweet in enumerate(tweets):
-    print(index, ":", tweet)
+    tweetData = index, tweet
+    stringedTweetData = str(tweetData)+"\n"
+    parsedFile.writelines(stringedTweetData)
+
+parsedFile.close()
