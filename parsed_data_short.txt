@@ -83,12 +83,12 @@
 (82, "This breaks my heart Navy Seal Marcus Luttrell's doggy  http://www.rightpundits.com/?p=3669 I am filled with rage."), emotion type is:, emotion is:"anger"
 (83, "Off to bed now, sick n can't sleep but will try w/ help of meds :s "), emotion type is:, emotion is:"sad"
 (84, 'Please watch this vid and tell me if you are not moved  http://www.youtube.com/watch?v=EUJSME0TORw'), emotion type is:, emotion is:
-(85, '@nicolerichie: Haha. Yeah, they were that band from MMC! I used to have a CD, but I lost it. '), emotion type is:, emotion is:
+(85, '@nicolerichie: Haha. Yeah, they were that band from MMC! I used to have a CD, but I lost it. '), emotion type is:, emotion is:"sad"
 (86, 'http://community.livejournal.com/ohnotheydidnt/33907252.html How freakin cool is that? Why doesnt shit like that happen to me? '), emotion type is:, emotion is:"anger"
 (87, 'I think I need to get laid. Sad revolution I had earlier rofl  http://twurl.nl/ibz2wb'), emotion type is:, emotion is:"sad"
 (88, 'WHF?? T:SCC killed Derek Reese (Brian Austin Green), I actually liked that character! '), emotion type is:, emotion is:"surprise"
 (89, '8:00am typical British morning. Cold, wet, road full of miserable angry drivers..... good times! I need a holiday '), emotion type is:, emotion is:"anger"
-(90, '@Tubeyornot2B you and me both. I thought I found a tweetheart, but I guess not.  so the search continues.. :-\\'), emotion type is:, emotion is:
+(90, '@Tubeyornot2B you and me both. I thought I found a tweetheart, but I guess not.  so the search continues.. :-\\'), emotion type is:, emotion is:"sad"
 (91, 'http://twitpic.com/2y4vn - remember these days? neither do i. siiiiike. i miss my old body  someday soon u shall be miiiiine.'), emotion type is:, emotion is:"sad"
 (92, '// :T I just asked my friend what piglet was (winnie the pooh.) ....seriously guys what is it '), emotion type is:, emotion is:
 (93, "Can't sleep. It's 2:05am--Ugh!!! I'm not even sleepy "), emotion type is:, emotion is:"annoyance"
