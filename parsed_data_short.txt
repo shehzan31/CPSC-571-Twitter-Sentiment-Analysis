@@ -17,7 +17,7 @@
 (16, 'SHOOTING OUTSIDE MY HOUSE :O NOT KIDDING! So SCARED '), emotion type is:, emotion is:
 (17, 'FML: So much for seniority, bc of technological ineptness, I now have to &quot;register&quot; for classes AGAIN '), emotion type is:, emotion is:
 (18, '@LevenRambin: Take it easy, and be good to you. '), emotion type is:, emotion is:
-(19, "Argh! I was suuuper sleepy an hour ago, now I'm wide awake.  Hope I don't stay up all night. :-/"), emotion type is:, emotion is:
+(19, "Argh! I was suuuper sleepy an hour ago, now I'm wide awake.  Hope I don't stay up all night. :-/"), emotion type is:, emotion is:annoyance
 (20, 'http://twitpic.com/2y2wr - according to my bro, our new puppy had a poo fight and was covered in poop  (picture stolen from him)'), emotion type is:, emotion is:
 (21, 'Su yin Huen tweeted I feel unbearable guilt. I made my staff cry  http://tinyurl.com/cw2l9t'), emotion type is:, emotion is:
 (22, 'getting annoyed easily today  &gt;&gt;&gt; biofuel proposal: getting annoyed easily today  &gt;&gt;&gt; biof.. http://tinyurl.com/ceprvs'), emotion type is:, emotion is:
@@ -31,8 +31,8 @@
 (30, "Duckling in famous children's book stolen from Boston's Public Garden - The Boston Globe http://tinyurl.com/dc2htx via @ShareThis OH NO!! "), emotion type is:, emotion is:
 (31, 'http://twitpic.com/2y36e - cant see the flowers falling  i dont have a camera, just my cellphone'), emotion type is:, emotion is:
 (32, 'http://is.gd/r8Zf,  http://is.gd/r8Zy, and  http://is.gd/r8ZG - test footage with my girlfriend (in HD) The dark one is underxposed '), emotion type is:, emotion is:
-(33, 'Fraking app store is pissing me off   http://tinyurl.com/c4ooho'), emotion type is:, emotion is:
-(34, "sad that the 'feet' of my macbook just fell off : sad that the 'feet' of my macbook just fell off "), emotion type is:, emotion is:
+(33, 'Fraking app store is pissing me off   http://tinyurl.com/c4ooho'), emotion type is:, emotion is: anger
+(34, "sad that the 'feet' of my macbook just fell off : sad that the 'feet' of my macbook just fell off "), emotion type is:, emotion is: sad
 (35, 'http://twitpic.com/2y3cf - Filled with curry  the true indian in me is coming out'), emotion type is:, emotion is:
 (36, 'Tumblr: This is exactly how it feels wearing a ï¿½tieï¿½  http://tinyurl.com/c8bvqh'), emotion type is:, emotion is:
 (37, "[-O] I wish the frogs weren't becoming extinct    http://tinyurl.com/cxe8w7"), emotion type is:, emotion is:
@@ -98,37 +98,37 @@
 (97, 'Know exactly how you feel man  re: http://ff.im/1XTN7'), emotion type is:, emotion is:"sad"
 (98, "Can't belive it.. We're home!! So sleepy 4 hrs today..  in Round Rock, TX http://loopt.us/GEtn1w"), emotion type is:, emotion is:
 (99, '@Amelia_Torode Have fun shopping ... but bear in mind the horrible forex truth  http://bit.ly/kHBN  '), emotion type is:, emotion is:
-(100, 'terrified by the news from Italy  http://tinyurl.com/dhdpne'), emotion type is:, emotion is:
+(100, 'terrified by the news from Italy  http://tinyurl.com/dhdpne'), emotion type is:, emotion is:anger
 (101, "Someone needs to give this baby a home!!! I would but it's a bit too soon  http://tinyurl.com/dzbppd"), emotion type is:, emotion is:
 (102, 'Our trip has been canceled. See the latest blog post for info  http://kiwinova.blogspot.com/'), emotion type is:, emotion is:
 (103, "@30SECONDSTOMARS: Thank's for your prayers, these days are very difficults "), emotion type is:, emotion is:
 (104, 'Back at :work, have to go to ::Zeist in a minute. But want to stay here to do some work '), emotion type is:, emotion is:
 (105, "@smaffulli correction: they don't tell you, but a cert. is there. How you can use it is a different matter, and without Win yet another! "), emotion type is:, emotion is:
 (106, 'Early Twitter Buzz: Star Trek Has Secret Premiere in Austin - http://is.gd/r9vr Holy crap! Wish I was there... '), emotion type is:, emotion is:
-(107, "i don't wanna leave CO! 4:15 am is coming too soon!! "), emotion type is:, emotion is:
+(107, "i don't wanna leave CO! 4:15 am is coming too soon!! "), emotion type is:, emotion is:joy
 (108, 'Where the magic happens every month LOL Sophia did a terrific job, as usual! What am I gonna have for dinner?  http://twitpic.com/2y5bz'), emotion type is:, emotion is:
 (109, 'first: UNC DOMINATED!!!!!!!!!!!!!!. second: the hills is back (hallelujah). third: econ paper? gaussian copula is def. NOT that deal '), emotion type is:, emotion is:
-(110, 'oh em gee. this is love http://tinyurl.com/djjc46 want want want! lusting after things i cannot afford. '), emotion type is:, emotion is:
+(110, 'oh em gee. this is love http://tinyurl.com/djjc46 want want want! lusting after things i cannot afford. '), emotion type is:, emotion is:joy
 (111, '@eNiBeNi i would if i knew them  ed si que se duerme temprano :S'), emotion type is:, emotion is:
-(112, 'The worst part about laundry is: the longer that you wait to do it, the more unpleasant it becomes. '), emotion type is:, emotion is:
+(112, 'The worst part about laundry is: the longer that you wait to do it, the more unpleasant it becomes. '), emotion type is:, emotion is:annoyance
 (113, "Note to you all: don't go to the choclate bar @ schiphol!! it is passengers only "), emotion type is:, emotion is:
 (114, 'wont get any rudd money   for those in doubt... http://calculators.ato.gov.au/scripts/axos/axos.asp?CONTEXT=&amp;KBS=ESB.xr4&amp;go=ok'), emotion type is:, emotion is:
 (115, 'Ads not yet appeared  Google Adsense Team said it may delay 48 hrs on http://womenissues.info'), emotion type is:, emotion is:
 (116, 'Journalist throws shoe at Chidambaram  http://ibnlive.in.com/news/journalist-throws-shoe-at-chidambaram/89666-3.html'), emotion type is:, emotion is:
-(117, " Heroes is losing it's momentum ): come on writers pick it up!!!"), emotion type is:, emotion is:
-(118, "Stupid bus was early  I missed it. Stupid thing  Then I missed the bus after that.  Finally got a bus, then missed my second :'( gutz."), emotion type is:, emotion is:
+(117, " Heroes is losing it's momentum ): come on writers pick it up!!!"), emotion type is:, emotion is:sad
+(118, "Stupid bus was early  I missed it. Stupid thing  Then I missed the bus after that.  Finally got a bus, then missed my second :'( gutz."), emotion type is:, emotion is:anger
 (119, 'gosh it`t 9:39 am and i am soooo tired &quot;yawn&quot; i want to go back to sleep but i can`t '), emotion type is:, emotion is:
 (120, "It's 8:40am... I've been awake for nearly 2 hours "), emotion type is:, emotion is:
-(121, "Banned from Sims Forums for the rest of the week. Aww    It feels weird. I was only sticking up for Chanel :'("), emotion type is:, emotion is:
+(121, "Banned from Sims Forums for the rest of the week. Aww    It feels weird. I was only sticking up for Chanel :'("), emotion type is:, emotion is:sad
 (122, 'late night is all re-runs  http://ff.im/1Y02L'), emotion type is:, emotion is:
 (123, 'is running on low batteries....  http://plurk.com/p/n0blb'), emotion type is:, emotion is:
 (124, "@mileycyrus i have the same problem, but it's 4:43 here... let's see if counting works..1234...56 57 58... 132 133 134... no z's for me! "), emotion type is:, emotion is:
-(125, "http://twitpic.com/2y5s9 - He only reminds me of him because he doesn't wash his hair, that's all. Gross, I know! "), emotion type is:, emotion is:
+(125, "http://twitpic.com/2y5s9 - He only reminds me of him because he doesn't wash his hair, that's all. Gross, I know! "), emotion type is:, emotion is:annoyance
 (126, 'just got back from the funeral of a government employee-friend.    http://plurk.com/p/n0bvd'), emotion type is:, emotion is:
 (127, 'What is common between Chidambaram and George Bush  http://news.oneindia.in/2009/04/07/sikh-journalist-hurls-shoe-at-p-chidambaram.html'), emotion type is:, emotion is:
-(128, "@_adriii OMGOSH, they're like biscuits, so so so yum. xD you haven't lived until you've eaten them missy :p &amp; i miss you too  x"), emotion type is:, emotion is:
+(128, "@_adriii OMGOSH, they're like biscuits, so so so yum. xD you haven't lived until you've eaten them missy :p &amp; i miss you too  x"), emotion type is:, emotion is:joy
 (129, 'Leaving Koh Tao  start of journey back to Bangkok  http://twitpic.com/2y5uv'), emotion type is:, emotion is:
-(130, "@_elliee haha yeah, i thought it would be much more complicated :') and well ive just got home from school, we've not got holidays  x"), emotion type is:, emotion is:
+(130, "@_elliee haha yeah, i thought it would be much more complicated :') and well ive just got home from school, we've not got holidays  x"), emotion type is:, emotion is:joy
 (131, 'Blip.fm is undergoing maintenance.  http://blip.fm/'), emotion type is:, emotion is:
 (132, 'Coke Zero mobile site broken... on iPhone anyway...   http://twitpic.com/2y5xp'), emotion type is:, emotion is:
 (133, "Just heard Eminem's new single. It's official. He fell off. : Just heard Eminem's new single. It's official. He fell off. "), emotion type is:, emotion is:
@@ -139,19 +139,19 @@
 (138, 'Mitea is missing  http://apps.facebook.com/catbook/profile/view/6040269'), emotion type is:, emotion is:
 (139, "Friendfeed beta doesn't appear to like my Twitter account  http://ff.im/-1Y0Zm"), emotion type is:, emotion is:
 (140, "boycotting work: on facebook's fashion war. "), emotion type is:, emotion is:
-(141, 'Masha is alone and sad  http://apps.facebook.com/catbook/profile/view/5408301'), emotion type is:, emotion is:
+(141, 'Masha is alone and sad  http://apps.facebook.com/catbook/profile/view/5408301'), emotion type is:, emotion is:sad
 (142, 'No TravoRadio this morning. BlipFM is down.  http://bit.ly/ch6Xr'), emotion type is:, emotion is:
 (143, 'Amazon mp3 downloads down to 29p So much for my 10%  Cheers @jodiedoubleday http://tinyurl.com/dg5qtg'), emotion type is:, emotion is:
 (144, 'Gonna be a great day: 4 of the 6 members of our team are off '), emotion type is:, emotion is:
 (145, 'its 3:24pm here, and i dont wanna go to chemistry course.. i dont wanna meet jordi! thats the main reason.. '), emotion type is:, emotion is:
 (146, 'turns out there had been #earthquake warnings in Italy and they were ignored: http://bit.ly/4dVYg3 '), emotion type is:, emotion is:
-(147, 'off to the hospital :S some jaw breaking is about to happen! '), emotion type is:, emotion is:
+(147, 'off to the hospital :S some jaw breaking is about to happen! '), emotion type is:, emotion is:anger
 (148, '@andygosling ouch  zoom:1 and the clearfix method are your friends.'), emotion type is:, emotion is:
 (149, 'Is just loving the fact that it is 3:30 in the a.m. and my lil daughter will not go back to sleep!!! '), emotion type is:, emotion is:
-(150, "@mileycyrus http://twitpic.com/2y606 - I want a Sofie!  She's helllza cute."), emotion type is:, emotion is:
+(150, "@mileycyrus http://twitpic.com/2y606 - I want a Sofie!  She's helllza cute."), emotion type is:, emotion is:annoyance
 (151, '...but first the other workathlon: 3 sets of management accounts one after the other. '), emotion type is:, emotion is:
 (152, 'wants to use the 8-directional dance pad, pero di compatible sa TV yung game.  http://plurk.com/p/n0hyu'), emotion type is:, emotion is:
-(153, "can't sleep bc I drank a diet coke @ 9pm....sucks bc I have to wake up at 5:30am  "), emotion type is:, emotion is:
+(153, "can't sleep bc I drank a diet coke @ 9pm....sucks bc I have to wake up at 5:30am  "), emotion type is:, emotion is:annoyance
 (154, "this is exactly why as cities burn worries me : &quot;As Cities Burn's third and most likely final outing&quot; - from their new album review "), emotion type is:, emotion is:
 (155, 'will probably be in Scotland next week.  http://plurk.com/p/n0ivz'), emotion type is:, emotion is:
 (156, 'Got the BrainBone daily question wrong!  - http://apps.facebook.com/brainbone/stats/339?ref=tw'), emotion type is:, emotion is:
@@ -159,16 +159,16 @@
 (158, "one of my site's PR dropped  http://plurk.com/p/n0jlt"), emotion type is:, emotion is:
 (159, "i'm in my clinic, its booring  http://twitpic.com/2y6qq"), emotion type is:, emotion is:
 (160, 'ARIZONAAAA! - japannaly: hhhahaha now you canï¿½t go thursday! YOU BITCH!  jk hahaha http://tumblr.com/xej1jtj9w'), emotion type is:, emotion is:
-(161, 'dear twitter... i have 4 bug bites on my leg. :\\ they r itchyyyy....  haha just got outta the shower. uhh night.'), emotion type is:, emotion is:
+(161, 'dear twitter... i have 4 bug bites on my leg. :\\ they r itchyyyy....  haha just got outta the shower. uhh night.'), emotion type is:, emotion is: annoyance
 (162, 'Looks like the Nobel peace prize is simply a popularity contest   http://tinyurl.com/cffz4h'), emotion type is:, emotion is:
 (163, 'ugh why did my mum wake me up so early!! 8:45 geesh! I NEED SLEEP! And @princessnadys...there is noth  awww '), emotion type is:, emotion is:
-(164, 'via @chrismevans: Argh.  Driving into London today.  Made a wrong turn at Kings-X - stuck in an extra 30 minutes of logjam traffic '), emotion type is:, emotion is:
-(165, 'uh D: why did the dentists hurt today. holy crap i feel like my teeth are all about to fall out '), emotion type is:, emotion is:
+(164, 'via @chrismevans: Argh.  Driving into London today.  Made a wrong turn at Kings-X - stuck in an extra 30 minutes of logjam traffic '), emotion type is:, emotion is:annoyance
+(165, 'uh D: why did the dentists hurt today. holy crap i feel like my teeth are all about to fall out '), emotion type is:, emotion is: annoyance
 (166, '@omkar_kurode : you won coz i created &quot;avenues&quot; for you! and yeah, i made the mistake of choosing TANGO over ZONE '), emotion type is:, emotion is:
 (167, 'wishes Restaurant City or Pet Society could be ported to the iPhone/iTouch.  http://plurk.com/p/n0lb0'), emotion type is:, emotion is:
 (168, 'not twittering in the past 22 days obviously. 1:40AM and taking a small break from ochem. '), emotion type is:, emotion is:
 (169, "http://twitpic.com/2y6z6 See where we've been moved too.  #dwsr"), emotion type is:, emotion is:
-(170, "Watched Smallville 8x18 last nite http://twurl.nl/iyar6d ep could've been so much more but yet again the decisions made fail to impress "), emotion type is:, emotion is:
+(170, "Watched Smallville 8x18 last nite http://twurl.nl/iyar6d ep could've been so much more but yet again the decisions made fail to impress "), emotion type is:, emotion is: sad
 (171, 'Reports from Italy: 179 death, 34 missing, 1500 injured  #Italy #Earthquake (via RAI http://tinyurl.com/c5mja5 )'), emotion type is:, emotion is:
 (172, "went to bed at 8pm and now wide awake at 4 am. I don't have to be to work until 8:30. This is going to be a long day "), emotion type is:, emotion is:
 (173, 'PyPI fail: Installing Markdown with pip and easy_install downloads the Python 3 version '), emotion type is:, emotion is:
@@ -178,28 +178,28 @@
 (177, 'Mmmm, i want eatser show on the 14th; not 15th   this is bad for me  Maddie D:'), emotion type is:, emotion is:
 (178, '@pmarnandus re: daily gossip.. well the twitter gossips are mostly from E! Online which I cannot access!! '), emotion type is:, emotion is:
 (179, "http://twitpic.com/2y7bg - This is Ashley from Kick's afternoon show. He's not impressed with the Twitter "), emotion type is:, emotion is:
-(180, '@BenjaminReid Your internet still down?? :O '), emotion type is:, emotion is:
-(181, 'is pisses off, legs ++ feet in loads of pain, running from a old man who tryed too trash our tent :O '), emotion type is:, emotion is:
+(180, '@BenjaminReid Your internet still down?? :O '), emotion type is:, emotion is: surprise
+(181, 'is pisses off, legs ++ feet in loads of pain, running from a old man who tryed too trash our tent :O '), emotion type is:, emotion is: anger
 (182, '@_Jaska Some things... they just never get old. http://tinyurl.com/holdisgiantcherry I miss Maya. '), emotion type is:, emotion is:
-(183, 'Making a short video, Windows movie maker has crashed for 20th time   but my middle name is perseverence :p , should finish the video soon'), emotion type is:, emotion is:
+(183, 'Making a short video, Windows movie maker has crashed for 20th time   but my middle name is perseverence :p , should finish the video soon'), emotion type is:, emotion is: surprise
 (184, "Rode river circuit, asthma hit hard :O Too wet to mow  Amazed or amused that W/pac cr limit raised, celebrated with Coles' shop, etc. ;)"), emotion type is:, emotion is:
-(185, '@alessandrod: dude.. hope you guys are alright, except the home/car '), emotion type is:, emotion is:
+(185, '@alessandrod: dude.. hope you guys are alright, except the home/car '), emotion type is:, emotion is: surprise
 (186, "Can't get past 43 in flight control  http://twitpic.com/2y7f2"), emotion type is:, emotion is:
 (187, '@karen230683 more shopping!!! sounds like a terrible plan  hope you are not dragging your brother with you this time :p'), emotion type is:, emotion is:
-(188, 'Out of stock on xbox 360 limied edition red Elite at the moment  . I must have one!   http://twitpic.com/2y7g0'), emotion type is:, emotion is:
-(189, '@cadelofficial http://twitpic.com/2ved8 - I love mountains.. but i live in belgium.. '), emotion type is:, emotion is:
+(188, 'Out of stock on xbox 360 limied edition red Elite at the moment  . I must have one!   http://twitpic.com/2y7g0'), emotion type is:, emotion is: 
+(189, '@cadelofficial http://twitpic.com/2ved8 - I love mountains.. but i live in belgium.. '), emotion type is:, emotion is: joy
 (190, "When I get mine Iï¿½m going to do a tour of Copenhagen with it ï¿½;) Hmmph I can't top that  .. must get thinking .. http://tinyurl.com/c2trgj"), emotion type is:, emotion is:
 (191, 'Fta: anyone heard about this? wondering if anyone is carrying VOOM anymore or are they pretty much dead?  http://tinyurl.com/ca6z8j'), emotion type is:, emotion is:
 (192, 'The Mighty Tap are doing a one-date world tour but I will have a newborn  http://news.bbc.co.uk/1/hi/entertainment/7985487.stm'), emotion type is:, emotion is:
-(193, "@jonpaulkaiser I'm probably worse than you lol so sorry, these photos are seriously long overdue  last time I buy a Sony cam: rubbish!"), emotion type is:, emotion is:
-(194, "dropped one of the earbuds of my sennheiser in my tea  i really hope its gonna work again :'("), emotion type is:, emotion is:
-(195, '@andy_cyrus im still awake too lol cant sleep  glad your up tho (:'), emotion type is:, emotion is:
-(196, "@kev_nz LOL better let aboy021 know if he's doing the deploy before his 9:30 bedtime. Hope you are feeling better. Being sick sux "), emotion type is:, emotion is:
+(193, "@jonpaulkaiser I'm probably worse than you lol so sorry, these photos are seriously long overdue  last time I buy a Sony cam: rubbish!"), emotion type is:, emotion is: annoyance
+(194, "dropped one of the earbuds of my sennheiser in my tea  i really hope its gonna work again :'("), emotion type is:, emotion is: sad
+(195, '@andy_cyrus im still awake too lol cant sleep  glad your up tho (:'), emotion type is:, emotion is: joy
+(196, "@kev_nz LOL better let aboy021 know if he's doing the deploy before his 9:30 bedtime. Hope you are feeling better. Being sick sux "), emotion type is:, emotion is: 
 (197, "@hairpins haha well what makes you think you don't use big words too? SADISTIC! :p what did i say any way? and no i don't, sorry babe "), emotion type is:, emotion is:
 (198, "It's 5:23 and I've been sitting around barely watching I'm Not There. I really wanted to see that movie, but I keep getting distracted. "), emotion type is:, emotion is:
-(199, 'bleh. i strongly dislike working at 5:45am everyday.  '), emotion type is:, emotion is:
+(199, 'bleh. i strongly dislike working at 5:45am everyday.  '), emotion type is:, emotion is: anger
 (200, 'This is amazing. But I can only get 41 words per minute  http://play.typeracer.com/'), emotion type is:, emotion is:
-(201, 'Wishing we had fast internet NOW....not in 8 years!  http://bit.ly/I72Oi'), emotion type is:, emotion is:
+(201, 'Wishing we had fast internet NOW....not in 8 years!  http://bit.ly/I72Oi'), emotion type is:, emotion is: annoyance
 (202, 'Getting ready for work... 6:30-3:15..  ..'), emotion type is:, emotion is:
 (203, 'http://tr.im/imOv ï¿½i, bï¿½c H?i Tho?i th? lï¿½ giï¿½ t? cu?c ??i r?i ( Mï¿½nh v?n cï¿½n nh? cï¿½i nhï¿½ t?p th? bï¿½ tï¿½ c?a bï¿½c ï¿½ ? ch? Tr?i '), emotion type is:, emotion is:
 (204, 'Btw Eventbox is available for free on Macheist for every visitors. Unfortunately I switched to Tweetdeck  http://macheist.com'), emotion type is:, emotion is:
