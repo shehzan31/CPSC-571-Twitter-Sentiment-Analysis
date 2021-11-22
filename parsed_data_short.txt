@@ -49,53 +49,53 @@
 (48, 'Back at work  @ John Muir Dr http://loopt.us/KoqAbg'), emotion type is:, emotion is:
 (49, "there's a new kind of starburst: favereds. sounds fab, bc cherry and strawberry are MY fav red's but they added watermellon and its yucky "), emotion type is:, emotion is:
 (50, "Why can't I sleep like her  http://twitpic.com/2y3ty"), emotion type is:, emotion is:
-(51, '@beachbassbone: roomie was home all day. All he had to do was scratch at the door. Comforter has to goto large laundromat machines. '), emotion type is:, emotion is:
-(52, 'worked his heart out today, doubling my weight at each station. Result: Stiff and pulled muscles... OUCH! '), emotion type is:, emotion is:
+(51, '@beachbassbone: roomie was home all day. All he had to do was scratch at the door. Comforter has to goto large laundromat machines. '), emotion type is:, emotion is:"annoyance"
+(52, 'worked his heart out today, doubling my weight at each station. Result: Stiff and pulled muscles... OUCH! '), emotion type is:, emotion is:"sad"
 (53, 'Sodding M25   http://twitpic.com/2y3y0'), emotion type is:, emotion is:
-(54, "oh I thought the pirate bay trial verdict was today :-s apparently it's in 10 days "), emotion type is:, emotion is:
+(54, "oh I thought the pirate bay trial verdict was today :-s apparently it's in 10 days "), emotion type is:, emotion is:"sad"
 (55, 'is in study hall now, and i will log off immediately.  http://plurk.com/p/mzxbg'), emotion type is:, emotion is:
 (56, 'is craving for some tantan nabe  http://plurk.com/p/mzxcs'), emotion type is:, emotion is:
-(57, "Can't believe Cutner is dead on House! Sad day.  in Santa Rosa, CA http://loopt.us/ORPL3A"), emotion type is:, emotion is:
-(58, 'Damnit I was really digging this season of Reaper  http://www.tv.com/story/13720.html?ref_story_id=13720&amp;ref_type=1101&amp;ref_name=story'), emotion type is:, emotion is:
-(59, 'definitely no vacation for me...   http://plurk.com/p/mzygb'), emotion type is:, emotion is:
+(57, "Can't believe Cutner is dead on House! Sad day.  in Santa Rosa, CA http://loopt.us/ORPL3A"), emotion type is:, emotion is:"sad"
+(58, 'Damnit I was really digging this season of Reaper  http://www.tv.com/story/13720.html?ref_story_id=13720&amp;ref_type=1101&amp;ref_name=story'), emotion type is:, emotion is:"sad"
+(59, 'definitely no vacation for me...   http://plurk.com/p/mzygb'), emotion type is:, emotion is:"sad"
 (60, 'New Post!  http://tinyurl.com/cexkqy'), emotion type is:, emotion is:
 (61, "#travian Total cost of the atk for the aggressor: 273,310 resources all said and done. I'm guessing he's not going to let that slide. "), emotion type is:, emotion is:
-(62, 'Meat Week Day 3: Tummy hurts every night '), emotion type is:, emotion is:
+(62, 'Meat Week Day 3: Tummy hurts every night '), emotion type is:, emotion is:"sad"
 (63, '@_saffron  Why not? :['), emotion type is:, emotion is:
 (64, 'Jade is looking for a new home...  http://apps.facebook.com/dogbook/profile/view/4744827'), emotion type is:, emotion is:
-(65, 'damnnn! i missed 11:11 '), emotion type is:, emotion is:
-(66, '@transbay &quot;SFMTA Budget Proposal Hearing: tomorrow, April 7 at 2:00 pm (City Hall, Room 400). Sadly, I cannot attend.&quot; Me neither. '), emotion type is:, emotion is:
-(67, 'job searching.....FYI: Yahoo HOT JOBS suck! .. im never going to find a job '), emotion type is:, emotion is:
+(65, 'damnnn! i missed 11:11 '), emotion type is:, emotion is:"annoyance"
+(66, '@transbay &quot;SFMTA Budget Proposal Hearing: tomorrow, April 7 at 2:00 pm (City Hall, Room 400). Sadly, I cannot attend.&quot; Me neither. '), emotion type is:, emotion is:"sad"
+(67, 'job searching.....FYI: Yahoo HOT JOBS suck! .. im never going to find a job '), emotion type is:, emotion is:"anger"
 (68, "I've finally given in. Now at Malaysian restaurant waiting for nasi lemak and teh Tarik. Mereka tak faham bm...  http://twitpic.com/2y4bh"), emotion type is:, emotion is:
 (69, "Where's Derrick  http://ff.im/-1XWXs"), emotion type is:, emotion is:
-(70, "Needs to stop sleeping all day.. Causes some problems when you're wide awake at 2:45am... "), emotion type is:, emotion is:
-(71, '@twitter please fix this http://sp2.ro/5b7bdb because it brakes all external twitter avatar searches '), emotion type is:, emotion is:
+(70, "Needs to stop sleeping all day.. Causes some problems when you're wide awake at 2:45am... "), emotion type is:, emotion is:"sad"
+(71, '@twitter please fix this http://sp2.ro/5b7bdb because it brakes all external twitter avatar searches '), emotion type is:, emotion is:"anger"
 (72, 'Not to self: licking off pudding from a seafood fork, not so enjoyable as slowly licking off of a spoon '), emotion type is:, emotion is:
-(73, "It just makes me happy! over and over again. I wish I wan't afraid to fly  http://tinyurl.com/64skpp"), emotion type is:, emotion is:
-(74, "It just makes me happy! over and over again! I just wish I wasn't afraid to fly  http://tinyurl.com/64skpp"), emotion type is:, emotion is:
-(75, "I woke up an hour ago ... Now I'm having a hard time going back to bed  in Lakewood, CA http://loopt.us/rywlHQ"), emotion type is:, emotion is:
+(73, "It just makes me happy! over and over again. I wish I wan't afraid to fly  http://tinyurl.com/64skpp"), emotion type is:, emotion is:"joy"
+(74, "It just makes me happy! over and over again! I just wish I wasn't afraid to fly  http://tinyurl.com/64skpp"), emotion type is:, emotion is:"joy"
+(75, "I woke up an hour ago ... Now I'm having a hard time going back to bed  in Lakewood, CA http://loopt.us/rywlHQ"), emotion type is:, emotion is:"annoyance"
 (76, 'Going to sleep with lily and rocki &lt;3 Johnathon is too busy watching batman movies  http://twitpic.com/2y4j5'), emotion type is:, emotion is:
-(77, '@gaspitsnicole sigh me too  mostly i midd hsnging out with my friends damn growing up : p'), emotion type is:, emotion is:
+(77, '@gaspitsnicole sigh me too  mostly i midd hsnging out with my friends damn growing up : p'), emotion type is:, emotion is:"sad"
 (78, '@gaspitsnicole sigh me too  mostly i miss hsnging out with my friends damn growing up : p oh yeah i miss being able to spell too lol'), emotion type is:, emotion is:
 (79, ': @nikicheong just reminded me that #KrispyKreme http://www.krispykreme.com.my/ has landed in Msia and has an ugly website '), emotion type is:, emotion is:
 (80, '@eileenb I had that a while back (http://tinyurl.com/dmukpr), and I know some other people that have too '), emotion type is:, emotion is:
-(81, "@ientje89 aw i'm fine too thanks! yeah i miss you so much on the MFC  but hope we can talk later on today  kisses :huglove:"), emotion type is:, emotion is:
-(82, "This breaks my heart Navy Seal Marcus Luttrell's doggy  http://www.rightpundits.com/?p=3669 I am filled with rage."), emotion type is:, emotion is:
-(83, "Off to bed now, sick n can't sleep but will try w/ help of meds :s "), emotion type is:, emotion is:
+(81, "@ientje89 aw i'm fine too thanks! yeah i miss you so much on the MFC  but hope we can talk later on today  kisses :huglove:"), emotion type is:, emotion is:"sad"
+(82, "This breaks my heart Navy Seal Marcus Luttrell's doggy  http://www.rightpundits.com/?p=3669 I am filled with rage."), emotion type is:, emotion is:"anger"
+(83, "Off to bed now, sick n can't sleep but will try w/ help of meds :s "), emotion type is:, emotion is:"sad"
 (84, 'Please watch this vid and tell me if you are not moved  http://www.youtube.com/watch?v=EUJSME0TORw'), emotion type is:, emotion is:
 (85, '@nicolerichie: Haha. Yeah, they were that band from MMC! I used to have a CD, but I lost it. '), emotion type is:, emotion is:
-(86, 'http://community.livejournal.com/ohnotheydidnt/33907252.html How freakin cool is that? Why doesnt shit like that happen to me? '), emotion type is:, emotion is:
-(87, 'I think I need to get laid. Sad revolution I had earlier rofl  http://twurl.nl/ibz2wb'), emotion type is:, emotion is:
-(88, 'WHF?? T:SCC killed Derek Reese (Brian Austin Green), I actually liked that character! '), emotion type is:, emotion is:
-(89, '8:00am typical British morning. Cold, wet, road full of miserable angry drivers..... good times! I need a holiday '), emotion type is:, emotion is:
+(86, 'http://community.livejournal.com/ohnotheydidnt/33907252.html How freakin cool is that? Why doesnt shit like that happen to me? '), emotion type is:, emotion is:"anger"
+(87, 'I think I need to get laid. Sad revolution I had earlier rofl  http://twurl.nl/ibz2wb'), emotion type is:, emotion is:"sad"
+(88, 'WHF?? T:SCC killed Derek Reese (Brian Austin Green), I actually liked that character! '), emotion type is:, emotion is:"surprise"
+(89, '8:00am typical British morning. Cold, wet, road full of miserable angry drivers..... good times! I need a holiday '), emotion type is:, emotion is:"anger"
 (90, '@Tubeyornot2B you and me both. I thought I found a tweetheart, but I guess not.  so the search continues.. :-\\'), emotion type is:, emotion is:
-(91, 'http://twitpic.com/2y4vn - remember these days? neither do i. siiiiike. i miss my old body  someday soon u shall be miiiiine.'), emotion type is:, emotion is:
+(91, 'http://twitpic.com/2y4vn - remember these days? neither do i. siiiiike. i miss my old body  someday soon u shall be miiiiine.'), emotion type is:, emotion is:"sad"
 (92, '// :T I just asked my friend what piglet was (winnie the pooh.) ....seriously guys what is it '), emotion type is:, emotion is:
-(93, "Can't sleep. It's 2:05am--Ugh!!! I'm not even sleepy "), emotion type is:, emotion is:
-(94, 'How sad, I did not know Andy Hallet died  http://tinyurl.com/dhq7xv'), emotion type is:, emotion is:
+(93, "Can't sleep. It's 2:05am--Ugh!!! I'm not even sleepy "), emotion type is:, emotion is:"annoyance"
+(94, 'How sad, I did not know Andy Hallet died  http://tinyurl.com/dhq7xv'), emotion type is:, emotion is:"sad"
 (95, 'sorry, I should say that this vid hits you hard, please beware the last 2 minutes especially  http://www.youtube.com/watch?v=EUJSME0TORw'), emotion type is:, emotion is:
 (96, 'Wondering why gamebattles is down  http://bit.ly/qZuUY'), emotion type is:, emotion is:
-(97, 'Know exactly how you feel man  re: http://ff.im/1XTN7'), emotion type is:, emotion is:
+(97, 'Know exactly how you feel man  re: http://ff.im/1XTN7'), emotion type is:, emotion is:"sad"
 (98, "Can't belive it.. We're home!! So sleepy 4 hrs today..  in Round Rock, TX http://loopt.us/GEtn1w"), emotion type is:, emotion is:
 (99, '@Amelia_Torode Have fun shopping ... but bear in mind the horrible forex truth  http://bit.ly/kHBN  '), emotion type is:, emotion is:
 (100, 'terrified by the news from Italy  http://tinyurl.com/dhdpne'), emotion type is:, emotion is:
