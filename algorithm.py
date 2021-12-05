@@ -1,5 +1,39 @@
 import re
+import nltk
+from nltk.tokenize import TweetTokenizer
+from nltk import word_tokenize, FreqDist
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+nltk.download
+nltk.download('wordnet')
+nltk.download('stopwords')
+
+# https://towardsdatascience.com/basic-tweet-preprocessing-in-python-efd8360d529e
 # Input: Tweets/Reviews
+
+
+def remove_punctuation(words):
+    new_words = []
+    for word in words:
+        new_word = re.sub(r'[^\w\s]', '', (word))
+        if new_word != '':
+            new_words.append(new_word)
+    return new_words
+
+
+def preprocessorLexicon(line):
+    tweet = line.split(",")[1]
+    tweet = tweet.strip()
+    # hashtag = []
+    # hashtag.append(tweet.apply(lambda x:
+    #     re.findall(r”#(\w+)”, x)))
+    print("before:", line)
+    exclamation_count = 0
+    if '!' in tweet:
+        exclamation_count += 1
+    # data = tweet.replace('\d+', '')
+    removePunctuation = remove_punctuation(tweet)
+    print("after: ", "".join(removePunctuation))
 
 
 def tweetReview(tweets):
@@ -22,10 +56,15 @@ def tweetReview(tweets):
     emoticon.extend(sadness + anger + joy + suprise + annoyance)
 
 
-tweetFile = open("data_short.csv", "r")
+tweetFile = open("parsed_data_short.txt", "r")
 tweetFile.readline()
+index = 0
 for tweet in tweetFile:
-    tweetReview(tweet)
+    # tweetReview(tweet)
+    if index == 5:
+        break
+    index += 1
+    preprocessorLexicon(tweet)
 # ptext = preprocessor(tweet)
 # tokens = tokenize(ptext)
 # ## Tasks
