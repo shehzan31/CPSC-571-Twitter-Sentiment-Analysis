@@ -21,22 +21,37 @@ def remove_punctuation(words):
     return new_words
 
 
-def preprocessorLexicon(line):
-    tweet = line.split(",")[1]
+def preprocessorLexicon(line, emoticonList):
+    splitTweet = line.split(",")
+
+    endTweet = ""
+    for i in range(2, len(splitTweet)):
+        # print(splitTweet[i])
+        endTweet += splitTweet[i]
+    # print(endTweet)
+    emoticonInTweet = []
+    for emoticon in emoticonList:
+        if emoticon in endTweet:
+            if(not ("http://" in endTweet and emoticon == ":/")):
+                emoticonInTweet.append(emoticon)
+    tweet = endTweet
     tweet = tweet.strip()
     # hashtag = []
     # hashtag.append(tweet.apply(lambda x:
     #     re.findall(r”#(\w+)”, x)))
-    print("before:", line)
+    # print("before:", line)
     exclamation_count = 0
     if '!' in tweet:
         exclamation_count += 1
     # data = tweet.replace('\d+', '')
     removePunctuation = remove_punctuation(tweet)
-    print("after: ", "".join(removePunctuation))
+    result = ["".join(removePunctuation) + ",,, " +
+              ''.join(map(str, emoticonInTweet))]
+    return result
+    # print("after: ", "".join(removePunctuation))
 
 
-def tweetReview(tweets):
+def tweetReview(tweet):
     # Output: Sentiment Score
     # NL: Negations List
     # IL: Intensifiers List
@@ -48,23 +63,28 @@ def tweetReview(tweets):
     suprise = [":-o", ":-O", "o_O", "O_O", "O_o", ":$", ":O"]
     annoyance = ["D:<", "D:", "D8", "D;", "D=",
                  "DX", "v.v", ":|", ":/", ":\\", "|:"]
-    processedTweetsList = []
-    processedTweet = []
+
+    # processedTweetLexicon = []
     tweetLexicon = []
     tweetEmoticon = []
-    emoticon = []
-    emoticon.extend(sadness + anger + joy + suprise + annoyance)
+    emoticonList = []
+    emoticonList.extend(sadness + anger + joy + suprise + annoyance)
+    return preprocessorLexicon(tweet, emoticonList)
 
 
-tweetFile = open("parsed_data_short.txt", "r")
+tweetFile = open("data_short.csv", "r")
 tweetFile.readline()
 index = 0
+processedTweetsList = []
 for tweet in tweetFile:
     # tweetReview(tweet)
     if index == 5:
         break
     index += 1
-    preprocessorLexicon(tweet)
+
+    processedTweetsList.append(tweetReview(tweet))
+print(processedTweetsList)
+
 # ptext = preprocessor(tweet)
 # tokens = tokenize(ptext)
 # ## Tasks
