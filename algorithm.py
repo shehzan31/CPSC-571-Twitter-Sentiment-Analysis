@@ -82,11 +82,26 @@ for tweet in tweetFile:
     # ## Exclamation count
     # Xc = exclam(ptext)
     exclamation_count = 0
+    positiveLexiconTable = []
+    negativeLexiconTable = []
+    score = 0
+    capitalExtraScore = 0
     # ptext = preprocessor(tweet)
     # tweetReview(tweet)
 
     # ptext is ["tweet lexicon",,,"emoticons in tweet"]
     ptext = tweetReview(tweet)
+    for word in ptext:
+        # NEED TO ADD CONFITION FOR NL
+        # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
+        if word in positiveLexiconTable:
+            score += 1
+            if word == word.upper():
+                score += capitalExtraScore
+        else:
+            score -= 1
+            if word == word.upper():
+                score += (-1) * capitalExtraScore
     print(ptext)
 
 # tokens = tokenize(ptext)
