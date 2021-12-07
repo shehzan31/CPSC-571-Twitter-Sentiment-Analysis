@@ -34,6 +34,7 @@ def preprocessorLexicon(line, emoticonList):
         if emoticon in endTweet:
             if(not ("http://" in endTweet and emoticon == ":/")):
                 emoticonInTweet.append(emoticon)
+                endTweet = endTweet.replace(emoticon, '')
     tweet = endTweet
     tweet = tweet.strip()
     # hashtag = []
