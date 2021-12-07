@@ -40,8 +40,9 @@ def preprocessorLexicon(line, emoticonList):
     # hashtag.append(tweet.apply(lambda x:
     #     re.findall(r”#(\w+)”, x)))
     # print("before:", line)
-    exclamation_count = 0
+
     if '!' in tweet:
+        global exclamation_count
         exclamation_count += 1
     # data = tweet.replace('\d+', '')
     removePunctuation = remove_punctuation(tweet)
@@ -64,9 +65,6 @@ def tweetReview(tweet):
     annoyance = ["D:<", "D:", "D8", "D;", "D=",
                  "DX", "v.v", ":|", ":/", ":\\", "|:"]
 
-    # processedTweetLexicon = []
-    tweetLexicon = []
-    tweetEmoticon = []
     emoticonList = []
     emoticonList.extend(sadness + anger + joy + suprise + annoyance)
     return preprocessorLexicon(tweet, emoticonList)
@@ -77,23 +75,26 @@ tweetFile.readline()
 index = 0
 processedTweetsList = []
 for tweet in tweetFile:
-    # tweetReview(tweet)
     if index == 5:
         break
     index += 1
+    # ## Exclamation count
+    # Xc = exclam(ptext)
+    exclamation_count = 0
+    # ptext = preprocessor(tweet)
+    # tweetReview(tweet)
 
-    processedTweetsList.append(tweetReview(tweet))
-print(processedTweetsList)
+    # ptext is ["tweet lexicon",,,"emoticons in tweet"]
+    ptext = tweetReview(tweet)
+    print(ptext)
 
-# ptext = preprocessor(tweet)
 # tokens = tokenize(ptext)
 # ## Tasks
 # ## (i) If word is in NL then reverse polarity of word+1
 # ## (ii) If word is in IL then modify polarity of word+1
 # ## (iii) If all letters in the word are in upper case then add fraction to word score
 # ## (iv) Enhance word score if it contains repeated letters
-# ## Exclamation count
-# Xc = exclam(ptext)
+
 # For word in tokens
 # If word in emoticons Then
 # score = emoticon score
