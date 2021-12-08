@@ -4,9 +4,13 @@ from nltk.tokenize import TweetTokenizer
 from nltk import word_tokenize, FreqDist
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from nltk.corpus import sentiwordnet as swn
 nltk.download
+nltk.download('sentiwordnet')
 nltk.download('wordnet')
 nltk.download('stopwords')
+
+# pip install --user -U nltk
 
 # https://towardsdatascience.com/basic-tweet-preprocessing-in-python-efd8360d529e
 # Input: Tweets/Reviews
@@ -76,14 +80,15 @@ tweetFile.readline()
 index = 0
 processedTweetsList = []
 for tweet in tweetFile:
-    if index == 5:
+    if index == 20:
         break
     index += 1
     # ## Exclamation count
     # Xc = exclam(ptext)
     exclamation_count = 0
-    positiveLexiconTable = []
-    negativeLexiconTable = []
+    # positiveLexiconTable = []
+    # negativeLexiconTable = []
+    changingSignTable = []
     score = 0
     capitalExtraScore = 0
     # ptext = preprocessor(tweet)
@@ -94,15 +99,24 @@ for tweet in tweetFile:
     for word in ptext:
         # NEED TO ADD CONFITION FOR NL
         # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
-        if word in positiveLexiconTable:
+        lexiconScore = 0
+        # lexicon score is determined by doing synsets
+
+        if word in changingSignTable:
+            score *= -1
+        # if word positive and not a negation
+        elif lexiconScore >= 0:
             score += 1
             if word == word.upper():
                 score += capitalExtraScore
+        # word is negative and not a negation
         else:
             score -= 1
             if word == word.upper():
                 score += (-1) * capitalExtraScore
     print(ptext)
+# print(list(swn.senti_synsets('love')))
+print(list(swn.senti_synsets('not'))[0])
 
 # tokens = tokenize(ptext)
 # ## Tasks
