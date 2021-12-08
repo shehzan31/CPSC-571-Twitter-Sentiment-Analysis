@@ -22,8 +22,8 @@ nltk.download('stopwords')
 
 def removeSlang(tweet):
     for i in range(len(tweet)):
-        if tweet[i] in slangs:
-            tweet[i] = slangs[tweet[i]]
+        if tweet[i].lower() in slangs:
+            tweet[i] = slangs[tweet[i].lower()]
     return tweet
 
 
@@ -95,7 +95,7 @@ file = open("abbrevations.txt", 'r')
 for slang in file:
     splittedSlang = slang.strip().split("=")
     # print(splittedSlang[1])
-    slangs[splittedSlang[0]] = splittedSlang[1]
+    slangs[splittedSlang[0].lower()] = splittedSlang[1].lower()
 # print(slangs)
 for tweet in tweetFile:
     if index == 20:
