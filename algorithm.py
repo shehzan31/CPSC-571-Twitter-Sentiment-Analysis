@@ -20,6 +20,13 @@ nltk.download('stopwords')
 # Input: Tweets/Reviews
 
 
+def removeSlang(tweet):
+    for i in range(len(tweet)):
+        if tweet[i] in slangs:
+            tweet[i] = slangs[tweet[i]]
+    return tweet
+
+
 def remove_punctuation(words):
     new_words = []
     for word in words:
@@ -82,7 +89,14 @@ def tweetReview(tweet):
 tweetFile = open("data_short.csv", "r")
 tweetFile.readline()
 index = 0
-processedTweetsList = []
+# processedTweetsList = []
+slangs = {}
+file = open("abbrevations.txt", 'r')
+for slang in file:
+    splittedSlang = slang.strip().split("=")
+    # print(splittedSlang[1])
+    slangs[splittedSlang[0]] = splittedSlang[1]
+# print(slangs)
 for tweet in tweetFile:
     if index == 20:
         break
@@ -101,6 +115,7 @@ for tweet in tweetFile:
     # ptext is ["tweet lexicon",,,"emoticons in tweet"]
     ptext = tweetReview(tweet)
     tokenized = word_tokenize(ptext[0].split(",", 1)[0])
+    tokenized = removeSlang(tokenized)
     emoticon = ptext[0].split(",", 1)[1]
     for word in tokenized:
         # NEED TO ADD CONFITION FOR NL
