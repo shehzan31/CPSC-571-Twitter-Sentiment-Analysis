@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import sentiwordnet as swn
 nltk.download
+#nltk.download
 nltk.download('sentiwordnet')
 nltk.download('wordnet')
 nltk.download('stopwords')
@@ -51,7 +52,7 @@ def preprocessorLexicon(line, emoticonList):
         exclamation_count += 1
     # data = tweet.replace('\d+', '')
     removePunctuation = remove_punctuation(tweet)
-    result = ["".join(removePunctuation) + ",,, " +
+    result = ["".join(removePunctuation) + "," +
               ''.join(map(str, emoticonInTweet))]
     return result
     # print("after: ", "".join(removePunctuation))
@@ -96,11 +97,14 @@ for tweet in tweetFile:
 
     # ptext is ["tweet lexicon",,,"emoticons in tweet"]
     ptext = tweetReview(tweet)
-    for word in ptext:
+    tokenized = word_tokenize(ptext[0].split(",", 1)[0])
+    emoticon = ptext[0].split(",", 1)[1]
+    for word in tokenized:
         # NEED TO ADD CONFITION FOR NL
         # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
         lexiconScore = 0
         # lexicon score is determined by doing synsets
+        
 
         if word in changingSignTable:
             score *= -1
@@ -114,9 +118,10 @@ for tweet in tweetFile:
             score -= 1
             if word == word.upper():
                 score += (-1) * capitalExtraScore
-    print(ptext)
+    
+    print(tokenized)
 # print(list(swn.senti_synsets('love')))
-print(list(swn.senti_synsets('not'))[0])
+# print(list(swn.senti_synsets('not'))[0])
 
 # tokens = tokenize(ptext)
 # ## Tasks
