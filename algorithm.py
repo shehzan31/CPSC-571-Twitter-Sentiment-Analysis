@@ -6,7 +6,8 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import sentiwordnet as swn
 nltk.download
-#nltk.download
+# nltk.download
+nltk.download('punkt')
 nltk.download('sentiwordnet')
 nltk.download('wordnet')
 nltk.download('stopwords')
@@ -38,7 +39,7 @@ def preprocessorLexicon(line, emoticonList):
     for emoticon in emoticonList:
         if emoticon in endTweet:
             if(not ("http://" in endTweet and emoticon == ":/")):
-                emoticonInTweet.append(emoticon)
+                emoticonInTweet.append(emoticon + " ")
                 endTweet = endTweet.replace(emoticon, '')
     tweet = endTweet
     tweet = tweet.strip()
@@ -104,7 +105,6 @@ for tweet in tweetFile:
         # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
         lexiconScore = 0
         # lexicon score is determined by doing synsets
-        
 
         if word in changingSignTable:
             score *= -1
@@ -118,7 +118,7 @@ for tweet in tweetFile:
             score -= 1
             if word == word.upper():
                 score += (-1) * capitalExtraScore
-    
+
     print(tokenized)
 # print(list(swn.senti_synsets('love')))
 # print(list(swn.senti_synsets('not'))[0])
