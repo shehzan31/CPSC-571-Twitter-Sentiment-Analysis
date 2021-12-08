@@ -15,6 +15,8 @@ nltk.download('stopwords')
 # pip install --user -U nltk
 
 # https://towardsdatascience.com/basic-tweet-preprocessing-in-python-efd8360d529e
+# https://github.com/rishabhverma17/sms_slang_translator/blob/master/slang.txt
+# https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
 # Input: Tweets/Reviews
 
 
