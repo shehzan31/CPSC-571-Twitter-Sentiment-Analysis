@@ -21,10 +21,18 @@ nltk.download('stopwords')
 
 
 def removeSlang(tweet):
-    for i in range(len(tweet)):
-        if tweet[i].lower() in slangs:
-            tweet[i] = slangs[tweet[i].lower()]
-    return tweet
+    result = ""
+    for word in tweet:
+        # print(word)
+        if word.lower() in slangs:
+            word = word.replace(word, slangs[word.lower()])
+            # print("changed word ", word)
+        result += (word) + " "
+    return result
+    # for i in range(len(tweet)):
+    #     if tweet[i].lower() in slangs:
+    #         tweet[i] = slangs[tweet[i].lower()]
+    # return tweet
 
 
 def remove_punctuation(words):
@@ -114,8 +122,10 @@ for tweet in tweetFile:
 
     # ptext is ["tweet lexicon",,,"emoticons in tweet"]
     ptext = tweetReview(tweet)
-    tokenized = word_tokenize(ptext[0].split(",", 1)[0])
-    tokenized = removeSlang(tokenized)
+    removedSlang = removeSlang(ptext[0].split(",", 1)[0].split(" "))
+    # print(removedSlang)
+    # print(ptext[0].split(",", 1)[0])
+    tokenized = word_tokenize(removedSlang)
     emoticon = ptext[0].split(",", 1)[1]
     for word in tokenized:
         # NEED TO ADD CONFITION FOR NL
