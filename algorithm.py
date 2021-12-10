@@ -5,7 +5,10 @@ from nltk import word_tokenize, FreqDist
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import sentiwordnet as swn
+from autocorrect import Speller
+from nltk.corpus import words
 nltk.download
+nltk.download('words')
 # nltk.download
 nltk.download('punkt')
 nltk.download('sentiwordnet')
@@ -13,11 +16,16 @@ nltk.download('wordnet')
 nltk.download('stopwords')
 
 # pip install --user -U nltk
+# pip install autocorrect
 
 # https://towardsdatascience.com/basic-tweet-preprocessing-in-python-efd8360d529e
 # https://github.com/rishabhverma17/sms_slang_translator/blob/master/slang.txt
 # https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
+# https://stackoverflow.com/questions/13928155/spell-checker-for-python
+# https://pypi.org/project/autocorrect/
 # Input: Tweets/Reviews
+
+spell = Speller(lang='en')
 
 
 def removeSlang(tweet):
@@ -27,6 +35,9 @@ def removeSlang(tweet):
         if word.lower() in slangs:
             word = word.replace(word, slangs[word.lower()])
             # print("changed word ", word)
+        else:
+            if word not in words.words():
+                word = spell(word)
         result += (word) + " "
     return result
     # for i in range(len(tweet)):
@@ -125,6 +136,7 @@ for tweet in tweetFile:
     removedSlang = removeSlang(ptext[0].split(",", 1)[0].split(" "))
     # print(removedSlang)
     # print(ptext[0].split(",", 1)[0])
+    print(tweet)
     tokenized = word_tokenize(removedSlang)
     emoticon = ptext[0].split(",", 1)[1]
     for word in tokenized:
@@ -147,7 +159,7 @@ for tweet in tweetFile:
                 score += (-1) * capitalExtraScore
 
     print(tokenized)
-# print(list(swn.senti_synsets('love')))
+# print(list(swn.senti_synsets('bummer')))
 # print(list(swn.senti_synsets('not'))[0])
 
 # tokens = tokenize(ptext)
