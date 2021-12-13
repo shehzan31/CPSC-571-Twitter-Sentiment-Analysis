@@ -31,7 +31,7 @@ spell = Speller(lang='en')
 def removeSlang(tweet):
     result = ""
     for word in tweet:
-        # print(word)
+        # print(word.lower())
         if word.lower() in slangs:
             word = word.replace(word, slangs[word.lower()])
             # print("changed word ", word)
@@ -39,6 +39,7 @@ def removeSlang(tweet):
             if word not in words.words():
                 word = spell(word)
         result += (word) + " "
+        # print(result)
     return result
     # for i in range(len(tweet)):
     #     if tweet[i].lower() in slangs:
@@ -87,6 +88,23 @@ def preprocessorLexicon(line, emoticonList):
     # print("after: ", "".join(removePunctuation))
 
 
+def sentimentFinder(word):
+    try:
+        wordVal = list(swn.senti_synsets(word))[0]
+        wordScore = 0
+        if not wordVal.pos_score() == wordVal.neg_score():
+            if wordVal.pos_score() > wordVal.neg_score():
+                wordScore = 1
+            else:
+                wordScore = -1
+        return wordScore
+    except:
+        return 0
+
+
+# sentimentFinder("love")
+
+
 def tweetReview(tweet):
     # Output: Sentiment Score
     # NL: Negations List
@@ -127,14 +145,14 @@ for tweet in tweetFile:
     # negativeLexiconTable = []
     changingSignTable = []
     score = 0
-    capitalExtraScore = 0
+    capitalExtraScore = 0.25
     # ptext = preprocessor(tweet)
     # tweetReview(tweet)
 
     # ptext is ["tweet lexicon",,,"emoticons in tweet"]
     ptext = tweetReview(tweet)
     removedSlang = removeSlang(ptext[0].split(",", 1)[0].split(" "))
-    # print(removedSlang)
+    print(removedSlang)
     # print(ptext[0].split(",", 1)[0])
     print(tweet)
     tokenized = word_tokenize(removedSlang)
@@ -142,22 +160,23 @@ for tweet in tweetFile:
     for word in tokenized:
         # NEED TO ADD CONFITION FOR NL
         # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
-        lexiconScore = 0
+        lexiconScore = sentimentFinder(word)
         # lexicon score is determined by doing synsets
-
+        # print(word, lexiconScore)
         if word in changingSignTable:
             score *= -1
         # if word positive and not a negation
-        elif lexiconScore >= 0:
-            score += 1
-            if word == word.upper():
-                score += capitalExtraScore
-        # word is negative and not a negation
         else:
-            score -= 1
-            if word == word.upper():
-                score += (-1) * capitalExtraScore
-
+            if lexiconScore == 1:
+                score += 1
+                if word == word.upper():
+                    score += capitalExtraScore
+            # word is negative and not a negation
+            elif lexiconScore == -1:
+                score -= 1
+                if word == word.upper():
+                    score -= (-1) * capitalExtraScore
+        print(word, score)
     print(tokenized)
 # print(list(swn.senti_synsets('bummer')))
 # print(list(swn.senti_synsets('not'))[0])
