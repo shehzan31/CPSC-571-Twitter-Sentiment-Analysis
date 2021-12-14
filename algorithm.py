@@ -144,7 +144,7 @@ for tweet in tweetFile:
     exclamation_count = 0
     # positiveLexiconTable = []
     # negativeLexiconTable = []
-    changingSignTable = ['not']
+    changingSignTable = ['not', "never"]
     score = 0
     capitalExtraScore = 0.25
     # ptext = preprocessor(tweet)
@@ -168,23 +168,27 @@ for tweet in tweetFile:
         print(word, lexiconScore)
         if word in changingSignTable:
             negation == True
+            continue
         # if word positive and not a negation
         else:
             if lexiconScore == 1:
                 score = 1
                 if word == word.upper():
                     score += capitalExtraScore
+                if negation == True:
+                    score *= -1
+                    negation == False
             # word is negative and not a negation
             elif lexiconScore == -1:
                 score = -1
                 if word == word.upper():
                     score -= (-1) * capitalExtraScore
+                if negation == True:
+                    score *= -1
+                    negation == False
             else:
                 score = 0
         # print(word, score)
-        if negation == True:
-            score *= -1
-            negation == False
         totalScore += score
     print(tokenized, totalScore)
 # print(list(swn.senti_synsets('bummer')))
