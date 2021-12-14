@@ -92,6 +92,8 @@ def sentimentFinder(word):
     try:
         wordVal = list(swn.senti_synsets(word))[0]
         wordScore = 0
+        if max(wordVal.pos_score(), wordVal.neg_score()) <= 0.2:
+            return 0
         if not wordVal.pos_score() == wordVal.neg_score():
             # print(word, wordVal.pos_score(), wordVal.neg_score())
             if wordVal.pos_score() > wordVal.neg_score():
@@ -144,7 +146,8 @@ for tweet in tweetFile:
     exclamation_count = 0
     # positiveLexiconTable = []
     # negativeLexiconTable = []
-    changingSignTable = ['not', "never"]
+    ignoreWord = ['is']
+    changingSignTable = ['not', 'never']
     score = 0
     capitalExtraScore = 0.25
     # ptext = preprocessor(tweet)
@@ -163,28 +166,36 @@ for tweet in tweetFile:
     for word in tokenized:
         # NEED TO ADD CONFITION FOR NL
         # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
-        lexiconScore = sentimentFinder(word)
         # lexicon score is determined by doing synsets
-        print(word, lexiconScore)
-        if word in changingSignTable:
-            negation == True
+        # print(word)
+        if word in ignoreWord:
+            continue
+        elif word in changingSignTable:
+            negation = True
+            print("not found")
             continue
         # if word positive and not a negation
         else:
+            lexiconScore = sentimentFinder(word)
+            print(word, lexiconScore, negation)
             if lexiconScore == 1:
+                print(word, negation)
                 score = 1
                 if word == word.upper():
                     score += capitalExtraScore
                 if negation == True:
                     score *= -1
+                    # print("neg word: ", word, score)
                     negation == False
             # word is negative and not a negation
             elif lexiconScore == -1:
+                print(word, negation)
                 score = -1
                 if word == word.upper():
                     score -= (-1) * capitalExtraScore
                 if negation == True:
                     score *= -1
+                    # print("pos word: ", word, score)
                     negation == False
             else:
                 score = 0
