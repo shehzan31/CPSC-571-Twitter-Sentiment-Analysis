@@ -93,6 +93,7 @@ def sentimentFinder(word):
         wordVal = list(swn.senti_synsets(word))[0]
         wordScore = 0
         if not wordVal.pos_score() == wordVal.neg_score():
+            # print(word, wordVal.pos_score(), wordVal.neg_score())
             if wordVal.pos_score() > wordVal.neg_score():
                 wordScore = 1
             else:
@@ -143,7 +144,7 @@ for tweet in tweetFile:
     exclamation_count = 0
     # positiveLexiconTable = []
     # negativeLexiconTable = []
-    changingSignTable = []
+    changingSignTable = ['not']
     score = 0
     capitalExtraScore = 0.25
     # ptext = preprocessor(tweet)
@@ -157,27 +158,35 @@ for tweet in tweetFile:
     print(tweet)
     tokenized = word_tokenize(removedSlang)
     emoticon = ptext[0].split(",", 1)[1]
+    totalScore = 0
+    negation = False
     for word in tokenized:
         # NEED TO ADD CONFITION FOR NL
         # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
         lexiconScore = sentimentFinder(word)
         # lexicon score is determined by doing synsets
-        # print(word, lexiconScore)
+        print(word, lexiconScore)
         if word in changingSignTable:
-            score *= -1
+            negation == True
         # if word positive and not a negation
         else:
             if lexiconScore == 1:
-                score += 1
+                score = 1
                 if word == word.upper():
                     score += capitalExtraScore
             # word is negative and not a negation
             elif lexiconScore == -1:
-                score -= 1
+                score = -1
                 if word == word.upper():
                     score -= (-1) * capitalExtraScore
-        print(word, score)
-    print(tokenized)
+            else:
+                score = 0
+        # print(word, score)
+        if negation == True:
+            score *= -1
+            negation == False
+        totalScore += score
+    print(tokenized, totalScore)
 # print(list(swn.senti_synsets('bummer')))
 # print(list(swn.senti_synsets('not'))[0])
 

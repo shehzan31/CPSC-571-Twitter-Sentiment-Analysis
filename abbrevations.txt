@@ -83,3 +83,4 @@ Im=I am
 imma=I will
 Imma=I will
 bummer=disappointing
+whack=horrible
