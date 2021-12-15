@@ -1,3 +1,4 @@
+import os
 import re
 import nltk
 from nltk.tokenize import TweetTokenizer
@@ -14,7 +15,6 @@ nltk.download('punkt')
 nltk.download('sentiwordnet')
 nltk.download('wordnet')
 nltk.download('stopwords')
-
 # pip install --user -U nltk
 # pip install autocorrect
 
@@ -23,6 +23,7 @@ nltk.download('stopwords')
 # https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
 # https://stackoverflow.com/questions/13928155/spell-checker-for-python
 # https://pypi.org/project/autocorrect/
+# https://stackoverflow.com/questions/11968976/list-files-only-in-the-current-directory
 # Input: Tweets/Reviews
 
 spell = Speller(lang='en')
@@ -126,6 +127,21 @@ def tweetReview(tweet):
     return preprocessorLexicon(tweet, emoticonList)
 
 
+def makeLexiconDictionary(dictionary):
+    files = [f for f in os.listdir('.') if os.path.isfile(f)]
+    for file in files:
+        if file.endswith('_Lexicon_English.txt'):
+            if not file == 'Positive_Lexicon_English.txt' and not file == 'Negative_Lexicon_English.txt':
+                fileEmotion = file.split('_')[0]
+                readFile = open(file, 'r')
+                for word in readFile:
+                    scrapedWord = word.rstrip()
+                    dictionary[scrapedWord] = fileEmotion
+    return dictionary
+
+
+dictionary = {}
+makeLexiconDictionary(dictionary)
 tweetFile = open("data_short.csv", "r")
 tweetFile.readline()
 index = 0
@@ -163,6 +179,7 @@ for tweet in tweetFile:
     emoticon = ptext[0].split(",", 1)[1]
     totalScore = 0
     negation = False
+    tweetEmotionDictionary = {}
     for word in tokenized:
         # NEED TO ADD CONFITION FOR NL
         # NEED TO ADD EMHANCE WORD SCORE IF THE SAME WORD COMES MULTIPLE TIMES (maybe)
@@ -176,6 +193,11 @@ for tweet in tweetFile:
             continue
         # if word positive and not a negation
         else:
+            if word in dictionary:
+                if word not in tweetEmotionDictionary:
+                    tweetEmotionDictionary[dictionary[word]] = 1
+                else:
+                    tweetEmotionDictionary[dictionary[word]] += 1
             lexiconScore = sentimentFinder(word)
             print(word, lexiconScore, negation)
             if lexiconScore == 1:
@@ -201,7 +223,16 @@ for tweet in tweetFile:
                 score = 0
         # print(word, score)
         totalScore += score
-    print(tokenized, totalScore)
+    if exclamation_count > 0:
+        totalScore = (exclamation_count+1)/2 + totalScore
+    tweetEmotion = ''
+    maxValue = 0
+    print(tweetEmotionDictionary)
+    for emotion in tweetEmotionDictionary:
+        if tweetEmotionDictionary[emotion] > maxValue:
+            tweetEmotion = emotion
+            maxValue = tweetEmotionDictionary[emotion]
+    print(tokenized, totalScore, tweetEmotion)
 # print(list(swn.senti_synsets('bummer')))
 # print(list(swn.senti_synsets('not'))[0])
 
