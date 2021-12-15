@@ -69,7 +69,7 @@ def preprocessorLexicon(line, emoticonList):
     for emoticon in emoticonList:
         if emoticon in endTweet:
             if(not ("http://" in endTweet and emoticon == ":/")):
-                emoticonInTweet.append(emoticon + " ")
+                emoticonInTweet.append(emoticon + "")
                 endTweet = endTweet.replace(emoticon, '')
     tweet = endTweet
     tweet = tweet.strip()
@@ -109,6 +109,28 @@ def sentimentFinder(word):
 # sentimentFinder("love")
 
 
+def find_emoticon_emotion(emoticons):
+    sadness = ['>:[', ':-(', ':(', ';-c', ':-<', ':<', ':[', ':{']
+    anger = [':-||', ':@>', ':(']
+    joy = [':)', ';)', ':]', ':p', ';p', ':D', ';D', ':>',
+           ':3', ':-}', ':-)', ':o)', ';^=;)', ':-D', ':->']
+    surprise = [':-o', ':-O', 'o_O', 'O_O', 'O_o', ':$', ':O']
+    annoyance = ['D:<', 'D:', 'D8', 'D;', 'D=',
+                 'DX', 'v.v', ':|', ':/', ':\\', '|:']
+    if(emoticons in sadness):
+        return 'Sad'
+    if(emoticons in anger):
+        return 'Angry'
+    if(emoticons in joy):
+        return 'Joy'
+    if(emoticons in surprise):
+        return 'Surprise'
+    if(emoticons in annoyance):
+        return 'Annoyed'
+    else:
+        return ''
+
+
 def tweetReview(tweet):
     # Output: Sentiment Score
     # NL: Negations List
@@ -118,12 +140,12 @@ def tweetReview(tweet):
     anger = [":-||", ":@>", ":("]
     joy = [":)", ";)", ":]", ":p", ";p", ":D", ";D", ":>",
            ":3", ":-}", ":-)", ":o)", ";^=;)", ":-D", ":->"]
-    suprise = [":-o", ":-O", "o_O", "O_O", "O_o", ":$", ":O"]
+    surprise = [":-o", ":-O", "o_O", "O_O", "O_o", ":$", ":O"]
     annoyance = ["D:<", "D:", "D8", "D;", "D=",
                  "DX", "v.v", ":|", ":/", ":\\", "|:"]
 
     emoticonList = []
-    emoticonList.extend(sadness + anger + joy + suprise + annoyance)
+    emoticonList.extend(sadness + anger + joy + surprise + annoyance)
     return preprocessorLexicon(tweet, emoticonList)
 
 
@@ -172,9 +194,9 @@ for tweet in tweetFile:
     # ptext is ["tweet lexicon",,,"emoticons in tweet"]
     ptext = tweetReview(tweet)
     removedSlang = removeSlang(ptext[0].split(",", 1)[0].split(" "))
-    print(removedSlang)
+    #print(removedSlang)
     # print(ptext[0].split(",", 1)[0])
-    print(tweet)
+    #print(tweet)
     tokenized = word_tokenize(removedSlang)
     emoticon = ptext[0].split(",", 1)[1]
     totalScore = 0
@@ -189,7 +211,7 @@ for tweet in tweetFile:
             continue
         elif word in changingSignTable:
             negation = True
-            print("not found")
+            #print("not found")
             continue
         # if word positive and not a negation
         else:
@@ -199,9 +221,9 @@ for tweet in tweetFile:
                 else:
                     tweetEmotionDictionary[dictionary[word]] += 1
             lexiconScore = sentimentFinder(word)
-            print(word, lexiconScore, negation)
+            #print(word, lexiconScore, negation)
             if lexiconScore == 1:
-                print(word, negation)
+                #print(word, negation)
                 score = 1
                 if word == word.upper():
                     score += capitalExtraScore
@@ -211,7 +233,7 @@ for tweet in tweetFile:
                     negation == False
             # word is negative and not a negation
             elif lexiconScore == -1:
-                print(word, negation)
+                #print(word, negation)
                 score = -1
                 if word == word.upper():
                     score -= (-1) * capitalExtraScore
@@ -227,12 +249,19 @@ for tweet in tweetFile:
         totalScore = (exclamation_count+1)/2 + totalScore
     tweetEmotion = ''
     maxValue = 0
-    print(tweetEmotionDictionary)
+    #print(tweetEmotionDictionary)
     for emotion in tweetEmotionDictionary:
         if tweetEmotionDictionary[emotion] > maxValue:
             tweetEmotion = emotion
             maxValue = tweetEmotionDictionary[emotion]
-    print(tokenized, totalScore, tweetEmotion)
+    emoticon_emotion = ''
+    if emoticon != '':
+        emoticon_emotion = find_emoticon_emotion(emoticon)
+        print(ptext, emoticon_emotion, tweetEmotion)
+        if(emoticon_emotion != tweetEmotion):
+            tweetEmotion = emoticon_emotion
+
+        
 # print(list(swn.senti_synsets('bummer')))
 # print(list(swn.senti_synsets('not'))[0])
 
