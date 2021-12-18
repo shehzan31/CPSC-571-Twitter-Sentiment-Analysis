@@ -161,6 +161,17 @@ def makeLexiconDictionary(dictionary):
                     dictionary[scrapedWord] = fileEmotion
     return dictionary
 
+# If hashtage is in sentence then capitalize word, otherwise do nothing
+def hashtag(sentence):
+    if "#" in sentence:
+        hash_index = sentence.index("#")
+        word = sentence[hash_index+1]
+
+        sentence[hash_index+1] = word.upper()
+    else: 
+        pass
+    return(sentence)
+
 
 dictionary = {}
 makeLexiconDictionary(dictionary)
@@ -198,6 +209,9 @@ for tweet in tweetFile:
     # print(ptext[0].split(",", 1)[0])
     #print(tweet)
     tokenized = word_tokenize(removedSlang)
+    
+    tokenized = hashtag(tokenized)
+    
     emoticon = ptext[0].split(",", 1)[1]
     totalScore = 0
     negation = False
