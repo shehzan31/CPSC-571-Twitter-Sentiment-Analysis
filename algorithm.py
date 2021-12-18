@@ -38,12 +38,12 @@ def removeSlang(tweet):
             # print("changed word ", word)
         else:
             if word.lower() not in words.words():
-                print("word is: ", word)
+                # print("word is: ", word)
                 if(word.lower() == word):
                     word = spell(word)
                 else:
                     word = spell(word.lower()).upper()
-                print("changed word is: ", word)
+                # print("changed word is: ", word)
         result += (word) + " "
         # print(result)
     return result
@@ -167,13 +167,15 @@ def makeLexiconDictionary(dictionary):
     return dictionary
 
 # If hashtage is in sentence then capitalize word, otherwise do nothing
+
+
 def hashtag(sentence):
     if "#" in sentence:
         hash_index = sentence.index("#")
         word = sentence[hash_index+1]
 
         sentence[hash_index+1] = word.upper()
-    else: 
+    else:
         pass
     return(sentence)
 
@@ -181,6 +183,7 @@ def hashtag(sentence):
 dictionary = {}
 makeLexiconDictionary(dictionary)
 tweetFile = open("data_short.csv", "r")
+newTweetFile = open("New_Tweet_File.txt", 'w')
 tweetFile.readline()
 index = 0
 # processedTweetsList = []
@@ -192,9 +195,9 @@ for slang in file:
     slangs[splittedSlang[0].lower()] = splittedSlang[1].lower()
 # print(slangs)
 for tweet in tweetFile:
-    if index == 20:
-        break
-    index += 1
+    # if index == 20:
+    #     break
+    # index += 1
     # ## Exclamation count
     # Xc = exclam(ptext)
     exclamation_count = 0
@@ -214,9 +217,9 @@ for tweet in tweetFile:
     # print(ptext[0].split(",", 1)[0])
     # print(tweet)
     tokenized = word_tokenize(removedSlang)
-    
+
     tokenized = hashtag(tokenized)
-    
+
     emoticon = ptext[0].split(",", 1)[1]
     totalScore = 0
     negation = False
@@ -268,7 +271,14 @@ for tweet in tweetFile:
         totalScore = (exclamation_count+1)/2 + totalScore
     tweetEmotion = ''
     maxValue = 0
-    print(tokenized, totalScore, tweetEmotion)
+    sentiment = ''
+    if totalScore > 0.5:
+        sentiment = 'positive'
+    elif totalScore < -0.5:
+        sentiment = 'negative'
+    else:
+        sentiment = 'neutral'
+    # print(tokenized, totalScore, tweetEmotion)
     # print(tweetEmotionDictionary)
     for emotion in tweetEmotionDictionary:
         if tweetEmotionDictionary[emotion] > maxValue:
@@ -277,10 +287,14 @@ for tweet in tweetFile:
     emoticon_emotion = ''
     if emoticon != '':
         emoticon_emotion = find_emoticon_emotion(emoticon)
-        print(ptext, emoticon_emotion, tweetEmotion)
         if(emoticon_emotion != tweetEmotion):
             tweetEmotion = emoticon_emotion
 
+    print(ptext, sentiment, emoticon_emotion, tweetEmotion)
+
+    finalData = [str(ptext), sentiment, emoticon_emotion, tweetEmotion]
+    newTweetFile.write(str(finalData))
+    newTweetFile.writelines('\n')
 
 # print(list(swn.senti_synsets('bummer')))
 # print(list(swn.senti_synsets('not'))[0])
