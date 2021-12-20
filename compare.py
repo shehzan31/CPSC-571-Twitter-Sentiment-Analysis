@@ -4,6 +4,7 @@ nonAutomateEmotionFile = open("parsed_data_short.txt", 'r')
 automateEmotionFile = open("New_Tweet_File.txt", 'r')
 index = 0
 
+successfulLexiconAndSentimentAnalysis = 0
 successfulSentimentAnalysis = 0
 successfulLexiconEmotionAnalysis = 0
 successfulEmoticonEmotionAnalysis = 0
@@ -41,7 +42,9 @@ while(True):
     # print(nonAutomatedLineEmotion, sentimentOfEmotion[nonAutomatedLineEmotion.lower(
     # )], automatedLineEmoticonEmotion,
     #     automatedLineLexiconEmotion, automatedLineSentiment)
-    if (nonAutomatedLineEmotion == automatedLineEmoticonEmotion and automatedLineEmoticonEmotion != ''):
+    if (nonAutomatedLineEmotion == automatedLineEmoticonEmotion and automatedLineEmoticonEmotion != '') and (nonAutomatedLineEmotion == automatedLineLexiconEmotion and automatedLineLexiconEmotion != ''):
+        successfulLexiconAndSentimentAnalysis += 1
+    elif (nonAutomatedLineEmotion == automatedLineEmoticonEmotion and automatedLineEmoticonEmotion != ''):
         # print(nonAutomatedLineEmotion, automatedLineEmoticonEmotion)
         successfulEmoticonEmotionAnalysis += 1
     elif nonAutomatedLineEmotion == automatedLineLexiconEmotion and automatedLineLexiconEmotion != '':
@@ -55,5 +58,5 @@ while(True):
                 successfulSentimentAnalysis += 1
                 continue
 
-print(successfulEmoticonEmotionAnalysis,
+print(successfulLexiconAndSentimentAnalysis, successfulEmoticonEmotionAnalysis,
       successfulLexiconEmotionAnalysis, successfulSentimentAnalysis)
