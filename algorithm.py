@@ -287,8 +287,6 @@ for tweet in tweetFile:
     emoticon_emotion = ''
     if emoticon != '':
         emoticon_emotion = find_emoticon_emotion(emoticon)
-        if(emoticon_emotion != tweetEmotion):
-            tweetEmotion = emoticon_emotion
 
     print(ptext, sentiment, emoticon_emotion, tweetEmotion)
 
