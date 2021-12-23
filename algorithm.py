@@ -120,8 +120,8 @@ def find_emoticon_emotion(emoticons):
     joy = [':)', ';)', ':]', ':p', ';p', ':D', ';D', ':>',
            ':3', ':-}', ':-)', ':o)', ';^=;)', ':-D', ':->']
     surprise = [':-o', ':-O', 'o_O', 'O_O', 'O_o', ':$', ':O']
-    annoyance = ['D:<', 'D:', 'D8', 'D;', 'D=',
-                 'DX', 'v.v', ':|', ':/', ':\\', '|:']
+    anticipation = ['D:<', 'D:', 'D8', 'D;', 'D=',
+                    'DX', 'v.v', ':|', ':/', ':\\', '|:']
     if(emoticons in sadness):
         return 'Sad'
     if(emoticons in anger):
@@ -130,8 +130,8 @@ def find_emoticon_emotion(emoticons):
         return 'Joy'
     if(emoticons in surprise):
         return 'Surprise'
-    if(emoticons in annoyance):
-        return 'Annoyed'
+    if(emoticons in anticipation):
+        return 'Anticipation'
     else:
         return ''
 
@@ -146,11 +146,10 @@ def tweetReview(tweet):
     joy = [":)", ";)", ":]", ":p", ";p", ":D", ";D", ":>",
            ":3", ":-}", ":-)", ":o)", ";^=;)", ":-D", ":->"]
     surprise = [":-o", ":-O", "o_O", "O_O", "O_o", ":$", ":O"]
-    annoyance = ["D:<", "D:", "D8", "D;", "D=",
-                 "DX", "v.v", ":|", ":/", ":\\", "|:"]
+    disgust = ["ಠ_ಠ", "ಠxಠ", "(⚆_⚆)", "(´ π`)"]
 
     emoticonList = []
-    emoticonList.extend(sadness + anger + joy + surprise + annoyance)
+    emoticonList.extend(sadness + anger + joy + surprise + disgust)
     return preprocessorLexicon(tweet, emoticonList)
 
 
