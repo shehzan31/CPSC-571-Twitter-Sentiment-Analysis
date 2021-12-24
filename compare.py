@@ -18,7 +18,6 @@ sentimentOfEmotion = {
     "sad": ['negative'],
     "surprise": ["positive", "negative", "neutral"],
     "angry": ["negative"],
-    "": ["boo"]
 }
 
 while(True):
