@@ -28,80 +28,72 @@ nltk.download('stopwords')
 
 spell = Speller(lang='en')
 
-
+# remove slang: taken in a word and if it is a slang then re writes it and also auto corrects it
 def removeSlang(tweet):
     result = ""
+    # for every word
     for word in tweet:
-        # print(word.lower())
+        # if word in slang (slang is a dictionary) replace with appropriate full word
         if word.lower() in slangs:
             word = word.replace(word, slangs[word.lower()])
-            # print("changed word ", word)
         else:
+            # if word not in slang then correct thhe word if it is spelled wrong
             if word.lower() not in words.words():
-                # print("word is: ", word)
                 if(word.lower() == word):
                     word = spell(word)
                 else:
                     word = spell(word.lower()).upper()
-                # print("changed word is: ", word)
         result += (word) + " "
-        # print(result)
     return result
-    # for i in range(len(tweet)):
-    #     if tweet[i].lower() in slangs:
-    #         tweet[i] = slangs[tweet[i].lower()]
-    # return tweet
 
-
+# remove puntuations: takens in a sentence and returns the sentence with punctuation removed
 def remove_punctuation(words):
     new_words = []
     for word in words:
+        # replace word
         new_word = re.sub(r'[^\w\s]', '', (word))
         if new_word != '':
             new_words.append(new_word)
     return new_words
 
-
+# pre processor: splits the sentence with words one side such as it is removed puntuations and slangs and stores emoticon after a ","
 def preprocessorLexicon(line, emoticonList):
     splitTweet = line.split(",")
-
     endTweet = ""
     for i in range(2, len(splitTweet)):
-        # print(splitTweet[i])
         endTweet += splitTweet[i]
-    # print(endTweet)
     emoticonInTweet = []
+    # keeping track of emoticons
     for emoticon in emoticonList:
         if emoticon in endTweet:
+            # edge case:
             if(not ("http://" in endTweet and emoticon == ":/")):
                 emoticonInTweet.append(emoticon + "")
                 endTweet = endTweet.replace(emoticon, '')
     tweet = endTweet
     tweet = tweet.strip()
-    # hashtag = []
-    # hashtag.append(tweet.apply(lambda x:
-    #     re.findall(r”#(\w+)”, x)))
-    # print("before:", line)
 
+    # handling exclamation marks
     if '!' in tweet:
         global exclamation_count
         exclamation_count += 1
-    # data = tweet.replace('\d+', '')
     removePunctuation = remove_punctuation(tweet)
+    # rejoin the sentence with puntuation removed, slang corrected, auto corrected before "," and emoticons after ","
     result = ["".join(removePunctuation) + "," +
               ''.join(map(str, emoticonInTweet))]
     return result
-    # print("after: ", "".join(removePunctuation))
 
-
+# sentiment finder: looks up senti_sysnet to find the appropriate sentiment scores and assigns a sentiment
 def sentimentFinder(word):
     try:
+        # look for word in the function
         wordVal = list(swn.senti_synsets(word))[0]
         wordScore = 0
+        # ranges
         if max(wordVal.pos_score(), wordVal.neg_score()) <= 0.2:
             return 0
+        # scoring each word
         if not wordVal.pos_score() == wordVal.neg_score():
-            # print(word, wordVal.pos_score(), wordVal.neg_score())
             if wordVal.pos_score() > wordVal.neg_score():
                 wordScore = 1
             else:
@@ -111,9 +103,7 @@ def sentimentFinder(word):
         return 0
 
 
-# sentimentFinder("love")
-
-
+# find emoticon emotion: finds the emoticons emotion via the list
 def find_emoticon_emotion(emoticons):
     sadness = ['>:[', ':-(', ':(', ';-c', ':-<', ':<', ':[', ':{']
     anger = [':-||', ':@>', ':(']
@@ -122,6 +112,7 @@ def find_emoticon_emotion(emoticons):
     surprise = [':-o', ':-O', 'o_O', 'O_O', 'O_o', ':$', ':O']
     anticipation = ['D:<', 'D:', 'D8', 'D;', 'D=',
                     'DX', 'v.v', ':|', ':/', ':\\', '|:']
+    # searches emoticon thru the list and returns the emotion
     if(emoticons in sadness):
         return 'Sad'
     if(emoticons in anger):
@@ -135,7 +126,7 @@ def find_emoticon_emotion(emoticons):
     else:
         return ''
 
-
+# caller method for pre-processing, slang removal and abbrevation
 def tweetReview(tweet):
     # Output: Sentiment Score
     # NL: Negations List
@@ -152,7 +143,7 @@ def tweetReview(tweet):
     emoticonList.extend(sadness + anger + joy + surprise + disgust)
     return preprocessorLexicon(tweet, emoticonList)
 
-
+# instantiate the dictionary
 def makeLexiconDictionary(dictionary):
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
     for file in files:
@@ -165,14 +156,11 @@ def makeLexiconDictionary(dictionary):
                     dictionary[scrapedWord] = fileEmotion
     return dictionary
 
-# If hashtage is in sentence then capitalize word, otherwise do nothing
-
-
+# hashtags: handling hashtage with a score weightage by capitalizing the word after #
 def hashtag(sentence):
     if "#" in sentence:
         hash_index = sentence.index("#")
         word = sentence[hash_index+1]
-
         sentence[hash_index+1] = word.upper()
     else:
         pass
@@ -216,36 +204,20 @@ tweetFile = open("data_short.csv", "r")
 newTweetFile = open("New_Tweet_File.txt", 'w')
 tweetFile.readline()
 index = 0
-# processedTweetsList = []
 slangs = {}
 file = open("abbrevations.txt", 'r')
 for slang in file:
     splittedSlang = slang.strip().split("=")
-    # print(splittedSlang[1])
     slangs[splittedSlang[0].lower()] = splittedSlang[1].lower()
-# print(slangs)
 for tweet in tweetFile:
-    # if index == 20:
-    #     break
-    # index += 1
-    # ## Exclamation count
-    # Xc = exclam(ptext)
     exclamation_count = 0
-    # positiveLexiconTable = []
-    # negativeLexiconTable = []
+    
     ignoreWord = ['is']
     changingSignTable = ['not', 'never']
     score = 0
     capitalExtraScore = 0.25
-    # ptext = preprocessor(tweet)
-    # tweetReview(tweet)
-
-    # ptext is ["tweet lexicon",,,"emoticons in tweet"]
     ptext = tweetReview(tweet)
     removedSlang = removeSlang(ptext[0].split(",", 1)[0].split(" "))
-    # print(removedSlang)
-    # print(ptext[0].split(",", 1)[0])
-    # print(tweet)
     tokenized = word_tokenize(removedSlang)
 
     tokenized = hashtag(tokenized)
@@ -263,7 +235,6 @@ for tweet in tweetFile:
             continue
         elif word in changingSignTable:
             negation = True
-            #print("not found")
             continue
         # if word positive and not a negation
         else:
@@ -273,29 +244,23 @@ for tweet in tweetFile:
                 else:
                     tweetEmotionDictionary[dictionary[word.lower()]] += 1
             lexiconScore = sentimentFinder(word.lower())
-            #print(word, lexiconScore, negation)
             if lexiconScore == 1:
-                #print(word, negation)
                 score = 1
                 if word == word.upper():
                     score += capitalExtraScore
                 if negation == True:
                     score *= -1
-                    # print("neg word: ", word, score)
                     negation == False
             # word is negative and not a negation
             elif lexiconScore == -1:
-                #print(word, negation)
                 score = -1
                 if word == word.upper():
                     score -= (-1) * capitalExtraScore
                 if negation == True:
                     score *= -1
-                    # print("pos word: ", word, score)
                     negation == False
             else:
                 score = 0
-        # print(word, score)
         totalScore += score
     if exclamation_count > 0:
         totalScore = (exclamation_count+1)/2 + totalScore
@@ -308,8 +273,6 @@ for tweet in tweetFile:
         sentiment = 'negative'
     else:
         sentiment = 'neutral'
-    # print(tokenized, totalScore, tweetEmotion)
-    # print(tweetEmotionDictionary)
     for emotion in tweetEmotionDictionary:
         if tweetEmotionDictionary[emotion] > maxValue:
             tweetEmotion = emotion
@@ -323,6 +286,3 @@ for tweet in tweetFile:
     finalData = [str(ptext), sentiment, emoticon_emotion, tweetEmotion]
     newTweetFile.write(str(finalData))
     newTweetFile.writelines('\n')
-
-# print(list(swn.senti_synsets('bummer')))
-# print(list(swn.senti_synsets('not'))[0])

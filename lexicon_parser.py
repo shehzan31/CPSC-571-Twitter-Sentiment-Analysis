@@ -1,4 +1,7 @@
+# Open all the files for reading
 fileToOpen = open("NRC_Lexicon.csv", 'r')
+
+#Open all the files to write in for parsing
 positiveFile = open("Positive_Lexicon_English.txt", 'w')
 negativeFile = open("Negative_Lexicon_English.txt", 'w')
 
@@ -13,11 +16,14 @@ surpriseFile = open("Surprise_Lexicon_English.txt", 'w')
 
 fileToOpen.readline()
 
+#read line
 for line in fileToOpen:
     line = line.splitlines()
     split = line[0].split(',')
     data = ''
     file = ''
+
+    # if a word found in speific lexicon category write it in the respective file
 
     if(int(split[1]) == 1):
         data = split[0]
@@ -91,6 +97,7 @@ for line in fileToOpen:
         data = ''
         file = ''
 
+#close all the files
 fileToOpen.close()
 negativeFile.close()
 positiveFile.close()

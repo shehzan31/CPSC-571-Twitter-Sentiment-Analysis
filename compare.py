@@ -1,5 +1,5 @@
 import re
-
+#read files
 nonAutomateEmotionFile = open("data_short_new_emotions.csv", 'r')
 nonAutomateEmotionFile.readline()
 automateEmotionFile = open("New_Tweet_File.txt", 'r')
@@ -21,18 +21,13 @@ sentimentOfEmotion = {
 }
 
 while(True):
-    # if index < 20:
     index += 1
-    # else:
-    #     break
     nonAutomateLine = nonAutomateEmotionFile.readline()
     automatedLine = automateEmotionFile.readline()
     splitNonAutomatedine = nonAutomateLine.split(',')
     splitAutomatedLine = automatedLine.split(',')
     if splitAutomatedLine == [''] and splitNonAutomatedine == ['']:
         break
-    # splitFurtherNonAutomatedine = splitNonAutomatedine[len(
-    #     splitNonAutomatedine)-1].strip().split(":")
     nonAutomatedLineEmotion = re.sub(r'[^\w\s]', '',
                                      (splitNonAutomatedine[len(splitNonAutomatedine)-1].strip()))
     automatedLineEmoticonEmotion = re.sub(r'[^\w\s]', '',
@@ -43,18 +38,14 @@ while(True):
     print("non auto: ", splitNonAutomatedine)
     automatedLineSentiment = re.sub(r'[^\w\s]', '',
                                     (splitAutomatedLine[len(splitAutomatedLine)-3].strip()))
-    # print(nonAutomatedLineEmotion, sentimentOfEmotion[nonAutomatedLineEmotion.lower(
-    # )], automatedLineEmoticonEmotion,
-    #     automatedLineLexiconEmotion, automatedLineSentiment)
+
     if nonAutomatedLineEmotion == '':
         noEmotion += 1
     elif (nonAutomatedLineEmotion == automatedLineEmoticonEmotion and automatedLineEmoticonEmotion != '') and (nonAutomatedLineEmotion == automatedLineLexiconEmotion and automatedLineLexiconEmotion != ''):
         successfulLexiconAndSentimentAnalysis += 1
     elif (nonAutomatedLineEmotion == automatedLineEmoticonEmotion and automatedLineEmoticonEmotion != ''):
-        # print(nonAutomatedLineEmotion, automatedLineEmoticonEmotion)
         successfulEmoticonEmotionAnalysis += 1
     elif nonAutomatedLineEmotion == automatedLineLexiconEmotion and automatedLineLexiconEmotion != '':
-        # print(nonAutomatedLineEmotion, automatedLineLexiconEmotion)
         successfulLexiconEmotionAnalysis += 1
     else:
         nonAutomatedLineSentiment = sentimentOfEmotion[nonAutomatedLineEmotion.lower(
@@ -65,5 +56,6 @@ while(True):
                 successfulSentimentAnalysis += 1
                 continue
 
+# Report the comparisions
 print("total tweets= ", index, "\nno emotion= ", noEmotion, "\nsuccess lexicon+emotion emotion= ", successfulLexiconAndSentimentAnalysis, "\nsuccess emoticon emotion= ", successfulEmoticonEmotionAnalysis,
       "\nsuccess lexicon emotion= ", successfulLexiconEmotionAnalysis, "\nsuccess sentiment analysis= ", successfulSentimentAnalysis)
