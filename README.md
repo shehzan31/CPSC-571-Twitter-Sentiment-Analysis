@@ -12,7 +12,7 @@ Adarsha Kanel
 We made an algorithm that will take a tweets and detect the emotion and sentiment of the tweet using its lexicons, emoticons and hashtags.
 
 Procedure to start up the algorithm:
-1. Extract all the contents of the "emotion_tweet.zip"
+1. Extract all the contents of the "Twitter-Sentiment-Analysis.zip"
 2. To run the project please run the following commands in command line (for installing):
     a. pip install --user -U nltk
     b. pip install autocorrect
